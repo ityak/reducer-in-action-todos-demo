@@ -7,7 +7,7 @@
 ```
 todoStates =  (state = initialState, action) => {
   if(typeof action.reducer === 'function') {
-    return action.reducer(state,action)
+    return action.reducer(state)
   }
   return state;
 }
