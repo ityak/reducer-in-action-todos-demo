@@ -5,7 +5,7 @@
    抛开对于写原生redux相对比其他封装的redux库的复杂程度的这个梗, 对原生redux的书写, 如何简化写法成为一个思考, 而`reducer-in-action`的这种写法改善或改进了redux的写法,其核心代码为reducer的书写:
 
 ```
-todoStates =  (state = initialState, action) => {
+cosnt reducerInAction =  (state = initialState, action) => {
   if(typeof action.reducer === 'function') {
     return action.reducer(state)
   }
