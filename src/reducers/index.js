@@ -1,19 +1,19 @@
 import { combineReducers } from 'redux'
-import { VisibilityFilters } from '../actions'
+import { myReducer } from '../tools'
 
-const initialState = {
-  todos:[],
-  visibilityFilter: VisibilityFilters.SHOW_ALL
-}
 
-let todoStates =  (state = initialState, action) => {
-  if(typeof action.reducer === 'function') {
-    return action.reducer(state,action)
-  }
-  return state;
-}
+const list = myReducer({
+  lists:['文字1','文字2','文字3','文字4','文字5'],
+  showList: '',
+})
+
+const ts = myReducer({
+  age: 18,
+  name: 'testName'
+})
 
 
 export default combineReducers({
-  todoStates
+  list,
+  ts
 })
